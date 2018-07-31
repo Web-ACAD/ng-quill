@@ -21,6 +21,9 @@ export class QuillComponent implements OnInit, OnDestroy, ControlValueAccessor
 	@Input()
 	public theme: string = 'snow';
 
+	@Input()
+	public options: any = null;
+
 	protected editor: Quill;
 
 	private defaultContents: any|undefined;
@@ -33,9 +36,13 @@ export class QuillComponent implements OnInit, OnDestroy, ControlValueAccessor
 
 	public ngOnInit(): void
 	{
-		this.editor = new Quill(this.$el.nativeElement, {
-			theme: this.theme,
-		});
+		const options = this.options || {};
+
+		if (typeof options.theme === 'undefined') {
+			options.theme = this.theme;
+		}
+
+		this.editor = new Quill(this.$el.nativeElement, options);
 
 		if (typeof this.defaultContents !== 'undefined') {
 			this.editor.setContents(this.defaultContents);
