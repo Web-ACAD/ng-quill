@@ -5,25 +5,23 @@
 
 [Quill](https://quilljs.com/) editor integration for angular forms.
 
+## Dependencies
+
+* `@angular/common`
+* `@angular/core`
+* `@angular/forms`
+* `quill`
+* `rxjs`
+
 ## Installation
 
 ```bash
-$ npm install --save @angular/common@^5.0
-$ npm install --save @angular/core@^5.0
-$ npm install --save @angular/forms@^5.0
-$ npm install --save quill
-$ npm install --save rxjs
 $ npm install --save @webacad/ng-quill
 ```
 
 or with yarn
 
 ```bash
-$ yarn add @angular/common@^5.0
-$ yarn add @angular/core@^5.0
-$ yarn add @angular/forms@^5.0
-$ yarn add quill
-$ yarn add rxjs
 $ yarn add @webacad/ng-quill
 ```
 
